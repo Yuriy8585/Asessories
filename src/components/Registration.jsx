@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 //import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-function Registration() {
+
+function Registration(props) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

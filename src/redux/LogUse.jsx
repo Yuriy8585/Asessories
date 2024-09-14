@@ -8,7 +8,8 @@ const dbConfig = {
   host: 'localhost',
   user: 'your_username',
   password: 'your_password',
-  database: 'your_database'
+  database: 'your_database',
+  
 };
 
 const db = mysql.createPool(dbConfig);
@@ -16,6 +17,7 @@ const db = mysql.createPool(dbConfig);
 // Register user
 app.post('/register', (req, res) => {
   const { username, email, password } = req.body;
+  const bcrypt= 'your_key'
   const hashedPassword = bcrypt.hashSync(password, 10);
   db.execute('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, hashedPassword])
     .then(() => {
@@ -29,6 +31,7 @@ app.post('/register', (req, res) => {
 // Login user
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
+  const bcrypt= 'your_key'
   db.execute('SELECT * FROM users WHERE username = ?', [username])
     .then(([user]) => {
       if (!user) {
