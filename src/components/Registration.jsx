@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-//import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -36,8 +35,8 @@ function Registration(props) {
         }
     };
 
-    const regstratonButton = (username, email) => {
-        props.registrationToStore(username, email)
+    const regstratonButton = (username, email, password, confirmPassword) => {
+        props.registrationToStore(username, email, password, confirmPassword)
     }
 
 
@@ -74,7 +73,7 @@ function Registration(props) {
                     </label>
                     <br/>
 
-                    <button onClick={regstratonButton(username, email)}><Link className="button" to="*">Register</Link></button>
+                    <button onClick={regstratonButton(username, email, password, confirmPassword)}><Link className="button" to="/">Register</Link></button>
                 </form>
             </div>
 
@@ -85,9 +84,12 @@ function Registration(props) {
 }
 
 
+
+
+
 const mapDispatchToProps = (dispatch) => ({
     // this will be injected in child component props
     registrationToStore: (input) => dispatch({type: 'PUT_REGISTRATION', payload: input}),
 });
 
-export default connect(null, mapDispatchToProps)(Registration);
+export default connect( null, mapDispatchToProps)(Registration);
