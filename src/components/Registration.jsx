@@ -13,7 +13,7 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setErrors({});
-
+/*
         // Валидация данных
         if (password !== confirmPassword) {
             setErrors({ confirmPassword: 'Passwords do not match' });
@@ -28,6 +28,7 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
                 },
                 body: JSON.stringify({ username, email, password }),
             });
+            console.log(response)
 
             const data = await response.json();
             if (response.ok) {
@@ -42,6 +43,7 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
             console.error('Error:', error);
             onRegisterError('An error occurred during registration.');
         }
+            */
     };
 
 
