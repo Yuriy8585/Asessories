@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import {append} from 'server.js';
 
 const Registration = ({ onRegisterSuccess, onRegisterError }) => {
     const [username, setUsername] = useState('');
@@ -13,38 +13,9 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setErrors({});
-/*
-        // Валидация данных
-        if (password !== confirmPassword) {
-            setErrors({ confirmPassword: 'Passwords do not match' });
-            return;
-        }
 
-        try {
-            const response = await fetch('http://localhost:5000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, email, password }),
-            });
-            console.log(response)
-
-            const data = await response.json();
-            if (response.ok) {
-                // Вызов функции обратного вызова для успешной регистрации
-                onRegisterSuccess(data.message);
-            } else {
-                // Вызов функции обратного вызова для обработки ошибки
-                setErrors({ username: data.message });
-                onRegisterError(data.message);
             }
-        } catch (error) {
-            console.error('Error:', error);
-            onRegisterError('An error occurred during registration.');
-        }
-            */
-    };
+    
 
 
     return (
@@ -80,8 +51,10 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
                     </label>
                     <br/>
 
-                    <button onClick={Registration(username, email, password, confirmPassword)}><Link className="button" to="/">Register</Link></button>
+                   {/* <Link className="button" to="/">Register</Link>*/}
+                   <button onClick= {sendToBackend ({username})}  type="submit">Register</button>
                 </form>
+                
             </div>
 
         </div>
@@ -90,6 +63,33 @@ const Registration = ({ onRegisterSuccess, onRegisterError }) => {
     )
 }
 
+
+
+
+
+function sendToBackend(user) {
+    const res = '';
+    const reg = ('email', 'password');
+    
+  // Simulate sending data to the backend
+  fetch(append(res, reg), {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+  })
+  
+  .then(response => response.json())
+  .then(data => {
+      console.log('Success:', data);
+      alert('Login successful!');
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+      alert('Login failed. Please try again.');
+  });
+}
 
 
 

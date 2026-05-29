@@ -1,0 +1,52 @@
+[
+    {
+        "img": "img/product1-img.svg",
+        "heading": "Free Delivery",
+        "text": "Worldwide delivery on all. Authoritatively morph next-generation innovation with extensive models."
+    },
+    {
+        "img": "img/product2-img.svg",
+        "heading": "24/7 Customer Support",
+        "text": "Our support team is available 24/7 to assist you with any inquiries."
+    },
+    {
+        "img": "img/product3-img.svg",
+        "heading": "Quality Assurance",
+        "text": "We ensure the highest quality standards for all our products."
+    },
+    {
+        "img": "img/product4-img.svg",
+        "heading": "Easy Returns",
+        "text": "Hassle-free returns within 30 days of purchase."
+    },
+    {
+        "img": "img/product5-img.svg",
+        "heading": "Secure Payment",
+        "text": "Your payment information is secure with us. Shop with confidence."
+    },
+    {
+        "img": "img/product6-img.svg",
+        "heading": "Exclusive Offers",
+        "text": "Sign up for our newsletter to receive exclusive offers and discounts."
+    },
+    {
+        "img": "img/product7-img.svg",
+        "heading": "Eco-Friendly Products",
+        "text": "We offer a range of eco-friendly products to help protect the planet."
+    },
+    {
+        "img": "img/product8-img.svg",
+        "heading": "Loyalty Rewards",
+        "text": "Join our loyalty program and earn points for every purchase."
+    },
+    {
+        "img": "img/product9-img.svg",
+        "heading": "Gift Cards Available",
+        "text": "Give the gift of choice with our gift cards."
+    },
+    {
+        "img": "img/product10-img.svg",
+        "heading": "Fast Shipping",
+        "text": "Get your orders delivered quickly with our fast shipping options."
+    }
+]
